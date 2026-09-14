@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ashcroft &amp; Partners | Independent UK ACCA Accountants</title>
+  <meta name="description" content="Independent UK ACCA chartered accountants. Tax, VAT, payroll, bookkeeping and accounts services for businesses and individuals.">
+  <style>
+
+/* ==========================================================================
+   UK ACCA Accountant — Responsive Stylesheet
+   Breakpoints:
+     Desktop  : ≥1024px  (default styles)
+     Tablet   : 641–1023px
+     Mobile   : ≤640px
+   ========================================================================== */
+
+:root {
+  --navy: #0f2a43;
+  --navy-light: #1b3f61;
+  --gold: #c9a227;
+  --gold-light: #e3c96a;
+  --off-white: #f7f6f2;
+  --grey: #5b6770;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(15, 42, 67, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--navy);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--navy); margin-bottom: 1.2rem; }
+h2 span { color: var(--gold); }
+h3 { font-size: clamp(1.05rem, 2vw, 1.25rem); margin-bottom: 0.5rem; }
+p { color: var(--grey); margin-bottom: 1rem; }
+
+.container { width: min(1120px, 92%); margin: 0 auto; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------------- Header / Nav ---------------- */
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; gap: 1rem; }
+.logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; min-width: 0; }
+.logo-mark {
+  width: 46px; height: 46px; flex: 0 0 46px; border-radius: 50%;
+  background: var(--navy); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif; font-weight: bold; font-size: 1.1rem;
+  border: 2px solid var(--gold);
+}
+.logo-text { font-family: Georgia, serif; font-size: clamp(0.95rem, 2vw, 1.2rem); color: var(--navy); font-weight: bold; line-height: 1.1; }
+.logo-text small { display: block; font-size: clamp(0.55rem, 1.2vw, 0.68rem); color: var(--gold); letter-spacing: 2px; font-family: 'Segoe UI', sans-serif; }
+
+nav ul { display: flex; gap: clamp(0.9rem, 2vw, 1.75rem); list-style: none; }
+nav a {
+  text-decoration: none; color: var(--navy); font-weight: 600; font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+  padding: 0.4rem 0; position: relative; transition: color 0.2s;
+  white-space: nowrap;
+}
+nav a::after {
+  content: ''; position: absolute; left: 0; bottom: -2px; height: 2px; width: 0;
+  background: var(--gold); transition: width 0.25s;
+}
+nav a:hover, nav a.active { color: var(--gold); }
+nav a:hover::after, nav a.active::after { width: 100%; }
+
+.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--navy); }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  background: linear-gradient(rgba(15,42,67,0.88), rgba(15,42,67,0.92)),
+              radial-gradient(circle at 80% 20%, #1b3f61, #0f2a43);
+  color: var(--white);
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+}
+.hero h1 { font-size: clamp(1.7rem, 5vw, 2.8rem); color: var(--white); margin-bottom: 1.2rem; }
+.hero h1 em { color: var(--gold); font-style: normal; }
+.hero p { color: #cfd9e3; font-size: clamp(1rem, 2vw, 1.15rem); max-width: 640px; margin-bottom: 2rem; }
+
+.btn {
+  display: inline-block; padding: 0.85rem 2rem; border-radius: 50px;
+  text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.25s;
+}
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { border: 2px solid var(--gold); color: var(--gold); margin-left: 0.75rem; }
+.btn-outline:hover { background: var(--gold); color: var(--navy); }
+
+/* ---------------- Inner page hero ---------------- */
+.page-hero {
+  background: linear-gradient(rgba(15,42,67,0.9), rgba(15,42,67,0.9));
+  padding: clamp(2.25rem, 5vw, 3.5rem) 0; color: var(--white);
+}
+.page-hero h1 { color: var(--white); font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.breadcrumb { color: var(--gold-light); font-size: 0.85rem; margin-top: 0.5rem; }
+
+/* ---------------- Sections & grids ---------------- */
+section { padding: clamp(2.75rem, 6vw, 4.5rem) 0; }
+.alt { background: var(--off-white); }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; align-items: center; }
+
+.card {
+  background: var(--white); border-radius: var(--radius); padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--shadow); border-top: 4px solid var(--gold);
+  transition: transform 0.25s;
+}
+.card:hover { transform: translateY(-6px); }
+.card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.card p { margin-bottom: 0; }
+
+/* ---------------- Trust bar ---------------- */
+.trust-bar { background: var(--navy); padding: clamp(1.75rem, 4vw, 2.5rem) 0; }
+.trust-bar .grid-3 { gap: 1rem; text-align: center; }
+.trust-stat { color: var(--white); }
+.trust-stat .num { font-family: Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--gold); font-weight: bold; }
+.trust-stat .label { color: #cfd9e3; font-size: 0.95rem; }
+
+/* ---------------- CTA band ---------------- */
+.cta-band {
+  background: linear-gradient(135deg, var(--gold), #b18d1e);
+  text-align: center;
+  padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+}
+.cta-band h2 { color: var(--navy); }
+.cta-band .btn { background: var(--navy); color: var(--gold-light); }
+.cta-band .btn:hover { background: var(--navy-light); }
+
+/* ---------------- Services ---------------- */
+.service-row {
+  display: grid; grid-template-columns: 60px 1fr; gap: 1.25rem;
+  background: var(--white); padding: clamp(1.25rem, 3vw, 1.75rem); border-radius: var(--radius);
+  box-shadow: var(--shadow); margin-bottom: 1.25rem; align-items: start;
+}
+.service-row .badge {
+  width: 52px; height: 52px; border-radius: 50%; background: var(--navy);
+  color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+}
+.service-row ul { margin: 0.5rem 0 0 1.1rem; color: var(--grey); }
+
+/* ---------------- About ---------------- */
+.founder-photo {
+  width: 100%; max-width: 380px; aspect-ratio: 4/5; border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--navy-light), var(--navy));
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: var(--gold-light); font-family: Georgia, serif; font-size: clamp(3rem, 8vw, 4rem);
+  border: 4px solid var(--gold); box-shadow: var(--shadow); margin: 0 auto;
+}
+.founder-photo small { font-size: 1rem; color: #cfd9e3; margin-top: 0.5rem; font-family: 'Segoe UI', sans-serif; }
+.values-list { list-style: none; margin-top: 1rem; }
+.values-list li { padding: 0.5rem 0 0.5rem 2rem; position: relative; color: var(--grey); }
+.values-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+
+/* ---------------- Contact ---------------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
+.contact-info-card { background: var(--navy); color: var(--white); border-radius: var(--radius); padding: clamp(1.5rem, 3.5vw, 2.25rem); }
+.contact-info-card h3 { color: var(--gold); }
+.contact-info-card p, .contact-info-card a { color: #cfd9e3; }
+.contact-info-card a { text-decoration: none; }
+.contact-info-card a:hover { color: var(--gold-light); }
+.contact-detail { margin-bottom: 1.4rem; }
+.contact-detail strong { color: var(--gold-light); display: block; margin-bottom: 0.2rem; }
+
+form { background: var(--white); padding: clamp(1.5rem, 3.5vw, 2.25rem); border-radius: var(--radius); box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1.1rem; }
+label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.35rem; }
+input, select, textarea {
+  width: 100%; padding: 0.75rem 0.9rem; border: 1px solid #d5dbe1; border-radius: 8px;
+  font-size: 16px; /* 16px prevents iOS auto-zoom on focus */
+  font-family: inherit; background: var(--off-white); transition: border 0.2s;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
+textarea { resize: vertical; min-height: 120px; }
+.form-success {
+  display: none; background: #e8f5e9; border: 1px solid #66bb6a; color: #2e7d32;
+  padding: 1rem; border-radius: 8px; margin-bottom: 1rem;
+}
+
+/* ---------------- Footer ---------------- */
+footer { background: var(--navy); color: #cfd9e3; padding: 3rem 0 1.5rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; }
+footer h4 { color: var(--gold); margin-bottom: 1rem; font-family: Georgia, serif; }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 0.5rem; }
+footer a { color: #cfd9e3; text-decoration: none; }
+footer a:hover { color: var(--gold-light); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.25rem; font-size: 0.85rem; text-align: center; }
+
+/* ==========================================================================
+   TABLET — 641px to 1023px
+   ========================================================================== */
+@media (max-width: 1023px) {
+  /* 3-column grids become 2 columns */
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .trust-bar .grid-3 { grid-template-columns: repeat(3, 1fr); } /* stats stay in a row of 3 */
+
+  .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
+  .founder-photo { max-width: 320px; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-grid > div:first-child { grid-column: 1 / -1; }
+
+  /* Slightly tighter nav spacing on smaller tablets */
+  nav ul { gap: 0.9rem; }
+  .logo-text small { letter-spacing: 1px; }
+}
+
+/* ==========================================================================
+   MOBILE — up to 640px
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* --- Hamburger navigation --- */
+  .menu-toggle { display: block; }
+  nav { position: relative; }
+  nav ul {
+    display: none; position: absolute; top: 100%; left: -4%; right: -4%;
+    background: var(--white); flex-direction: column; gap: 0;
+    border-bottom: 3px solid var(--gold); box-shadow: var(--shadow);
+  }
+  nav ul.open { display: flex; }
+  nav ul li { border-top: 1px solid #eee; }
+  nav a {
+    display: block; padding: 1rem 5%;
+    font-size: 1rem; min-height: 48px; /* touch-friendly tap target */
+  }
+  nav a::after { display: none; }
+  nav a:hover, nav a.active {
+    background: var(--off-white); color: var(--gold);
+  }
+
+  /* --- Grids stack to single column --- */
+  .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 1.25rem; }
+  .trust-bar .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  /* --- Hero --- */
+  .hero { text-align: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .btn { display: block; width: 100%; text-align: center; }
+  .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+
+  /* --- Services --- */
+  .service-row { grid-template-columns: 1fr; gap: 0.9rem; }
+  .service-row .badge { width: 44px; height: 44px; font-size: 1.2rem; }
+
+  /* --- Forms --- */
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+
+  /* --- Footer --- */
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  footer ul li { margin-bottom: 0.6rem; }
+
+  .page-hero { text-align: center; }
+}
+
+/* ==========================================================================
+   MOBILE — very small screens (up to 380px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .logo-text { font-size: 0.85rem; }
+  .logo-mark { width: 40px; height: 40px; flex-basis: 40px; font-size: 0.95rem; }
+  .hero h1 { font-size: 1.5rem; }
+  .card, form, .contact-info-card, .service-row { padding: 1.1rem; }
+}
+
+</style>
+  <meta name="theme-color" content="#0f2a43">
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <a class="logo" href="index.html">
+      <div class="logo-mark">AP</div>
+      <div class="logo-text">Ashcroft &amp; Partners<small>ACCA CHARTERED ACCOUNTANTS</small></div>
+    </a>
+    <button class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('open')" aria-label="Menu">☰</button>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="services.html" class="">Services</a></li>
+        <li><a href="contact.html" class="">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="container">
+    <h1>Clarity in Numbers.<br><em>Confidence in Business.</em></h1>
+    <p>Ashcroft &amp; Partners is an independent ACCA chartered accountancy practice helping UK businesses and individuals stay compliant, save tax and grow with confidence.</p>
+    <a class="btn btn-gold" href="contact.html">Book a Free Consultation</a>
+    <a class="btn btn-outline" href="services.html">Explore Our Services</a>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="container grid-3">
+    <div class="trust-stat"><div class="num">20+</div><div class="label">Years of Practice</div></div>
+    <div class="trust-stat"><div class="num">350+</div><div class="label">Happy Clients</div></div>
+    <div class="trust-stat"><div class="num">ACCA</div><div class="label">Fully Regulated</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Why Clients <span>Choose Us</span></h2>
+    <div class="grid-3" style="margin-top:2rem;">
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Independent &amp; Personal</h3>
+        <p>No call centres, no juniors-only service. You work directly with a qualified ACCA accountant who knows your business.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💷</div>
+        <h3>Fixed, Fair Fees</h3>
+        <p>Transparent fixed-fee packages with no hidden surprises. Know exactly what you'll pay before we start.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Modern &amp; Cloud-Based</h3>
+        <p>Xero, QuickBooks and FreeAgent certified. Real-time numbers, digital records and MTD-ready from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>What Our <span>Clients Say</span></h2>
+    <div class="grid-3" style="margin-top:2rem;">
+      <div class="card">
+        <p>"Switching to Ashcroft &amp; Partners saved us over £4,000 in tax in our first year. Genuinely personal service."</p>
+        <p style="margin-top:1rem;color:var(--navy);font-weight:600;">— Sarah M., Retail Business Owner, Manchester</p>
+      </div>
+      <div class="card">
+        <p>"They handled my first self-assessment as a freelancer painlessly. Clear advice, quick responses, fair price."</p>
+        <p style="margin-top:1rem;color:var(--navy);font-weight:600;">— James T., IT Contractor, London</p>
+      </div>
+      <div class="card">
+        <p>"Our year-end accounts and Corporation Tax have never been smoother. Highly recommended."</p>
+        <p style="margin-top:1rem;color:var(--navy);font-weight:600;">— Priya K., Director, K Design Ltd</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to take control of your finances?</h2>
+    <p style="color:var(--navy);">Book your free, no-obligation 30-minute consultation today.</p>
+    <a class="btn" href="contact.html">Get in Touch</a>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Ashcroft &amp; Partners</h4>
+        <p>Independent ACCA chartered accountancy practice based in the UK. Trusted by sole traders, partnerships and limited companies for over 20 years.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 12 Crown Court, London EC2V 6JP</li>
+          <li>📞 020 7946 0958</li>
+          <li>✉️ hello@ashcroft-partners.co.uk</li>
+          <li>🕘 Mon–Fri, 9:00–17:30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Ashcroft &amp; Partners Ltd. Registered in England &amp; Wales No. 04567890. Regulated by ACCA.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
